@@ -14,6 +14,8 @@
 		3116339B25EF0D71005455A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3116339A25EF0D71005455A4 /* Assets.xcassets */; };
 		3116339E25EF0D71005455A4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3116339D25EF0D71005455A4 /* Preview Assets.xcassets */; };
 		311633A125EF0D71005455A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3116339F25EF0D71005455A4 /* LaunchScreen.storyboard */; };
+		3124144525F4385200C387BA /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3124144425F4385200C387BA /* MapView.swift */; };
+		3124144925F43C6900C387BA /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3124144825F43C6900C387BA /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		3116339D25EF0D71005455A4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		311633A025EF0D71005455A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		311633A225EF0D71005455A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3124144425F4385200C387BA /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		3124144825F43C6900C387BA /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,9 +62,10 @@
 		3116339025EF0D70005455A4 /* Covid Test Finder */ = {
 			isa = PBXGroup;
 			children = (
+				3124144725F43C4700C387BA /* Managers */,
+				3124144325F4382000C387BA /* Views */,
 				3116339125EF0D70005455A4 /* AppDelegate.swift */,
 				3116339325EF0D70005455A4 /* SceneDelegate.swift */,
-				3116339525EF0D70005455A4 /* ContentView.swift */,
 				3116339A25EF0D71005455A4 /* Assets.xcassets */,
 				3116339F25EF0D71005455A4 /* LaunchScreen.storyboard */,
 				311633A225EF0D71005455A4 /* Info.plist */,
@@ -76,6 +81,23 @@
 				3116339D25EF0D71005455A4 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3124144325F4382000C387BA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3116339525EF0D70005455A4 /* ContentView.swift */,
+				3124144425F4385200C387BA /* MapView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3124144725F43C4700C387BA /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				3124144825F43C6900C387BA /* LocationManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,6 +172,8 @@
 			files = (
 				3116339225EF0D70005455A4 /* AppDelegate.swift in Sources */,
 				3116339925EF0D70005455A4 /* Covid_Test_Finder.xcdatamodeld in Sources */,
+				3124144925F43C6900C387BA /* LocationManager.swift in Sources */,
+				3124144525F4385200C387BA /* MapView.swift in Sources */,
 				3116339425EF0D70005455A4 /* SceneDelegate.swift in Sources */,
 				3116339625EF0D70005455A4 /* ContentView.swift in Sources */,
 			);

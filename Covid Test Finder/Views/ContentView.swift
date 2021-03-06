@@ -14,7 +14,7 @@ struct SplashScreenView: View {
     
     var body: some View {
         ZStack {
-            background(Color("SplashScreenBackground"))
+            Color("SplashScreenBackground")
             
             Image("Logo")
                 .resizable()
@@ -47,14 +47,29 @@ struct SplashScreenView: View {
    
 
 struct ContentView: View {
+    
+    @ObservedObject var locationManager = LocationManager() 
+    @State private var search: String = ""
+    
     var body: some View {
-        Text("Find Your Nearest Testing Centre")
+        ZStack(alignment: .top) {
+            
+            MapView().ignoresSafeArea()
+            
+            TextField("Search for Test Centre", text: $search, onEditingChanged: { _ in })
+            {
+            }.textFieldStyle(RoundedBorderTextFieldStyle())
             .padding()
+            .offset(y: 44)
+               
     }
-}
+        }
 
+}
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+        ContentView()
+            .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
     }
 }
