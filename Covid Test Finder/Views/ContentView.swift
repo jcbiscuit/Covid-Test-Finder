@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct SplashScreenView: View {
     
@@ -48,16 +49,34 @@ struct SplashScreenView: View {
 
 struct ContentView: View {
     
-    @ObservedObject var locationManager = LocationManager() 
+    @ObservedObject var locationManager = LocationManager()
+    @State private var landmarks: [Landmark] = [Landmark]()
     @State private var search: String = ""
+    
+    private func getNearbyLandmarks() {
+        
+        let request = MKLocalSearch.Request()
+        request.naturalLanguageQuery = search
+        
+        let search = MKLocalSearch(request: request)
+        search.start { (response, error) in
+            if let response = response {
+                let mapItems = response.mapItems
+                self.landmarks = mapItems.map {
+                    Landmark(placemark: $0.placemark)
+                }
+            }
+        }
+    }
     
     var body: some View {
         ZStack(alignment: .top) {
             
-            MapView().ignoresSafeArea()
+            MapView(landmarks: landmarks).ignoresSafeArea()
             
             TextField("Search for Test Centre", text: $search, onEditingChanged: { _ in })
             {
+                self.getNearbyLandmarks()
             }.textFieldStyle(RoundedBorderTextFieldStyle())
             .padding()
             .offset(y: 44)
