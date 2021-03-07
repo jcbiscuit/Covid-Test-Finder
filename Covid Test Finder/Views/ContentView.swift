@@ -43,64 +43,43 @@ struct SplashScreenView: View {
     }
 }
        
-            
-            
-   
-
 struct ContentView: View {
-    
-    @ObservedObject var locationManager = LocationManager()
-    @State private var landmarks: [Landmark] = [Landmark]()
-    @State private var search: String = ""
-    @State private var tapped: Bool = false
-    
-    private func getNearbyLandmarks() {
-        
-        let request = MKLocalSearch.Request()
-        request.naturalLanguageQuery = search
-        
-        let search = MKLocalSearch(request: request)
-        search.start { (response, error) in
-            if let response = response {
-                let mapItems = response.mapItems
-                self.landmarks = mapItems.map {
-                    Landmark(placemark: $0.placemark)
-                }
-            }
-        }
-    }
-    
-    func calculateOffset() -> CGFloat {
-        if self.landmarks.count > 0 && !self.tapped {
-            return UIScreen.main.bounds.size.height / 6
-        }
-        else if self.tapped {
-            return 650
-        } else {
-            return UIScreen.main.bounds.size.height
-        }
-    }
-    
     var body: some View {
-        ZStack(alignment: .top) {
-            
-            MapView(landmarks: landmarks).ignoresSafeArea()
-            
-            TextField("Search for Test Centre", text: $search, onEditingChanged: { _ in })
-            {
-                self.getNearbyLandmarks()
-            }.textFieldStyle(RoundedBorderTextFieldStyle())
-            .padding()
-            .offset(y: 44)
-            
-            
-            PlaceListView(landmarks: self.landmarks) {
-                self.tapped.toggle()
-            }.animation(.spring())
-            .offset(y: calculateOffset())
+            VStack {
+                NavigationView {
+                    VStack {
+                Image("Logo")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                   
+                NavigationLink(
+                    destination: MainMapView()) {
+                Text("Find Nearby Test Centre")
+                    .frame(width: 400, height: 70)
+                    .foregroundColor(.black)
+                    .background(ZStack {
+                        Color("BackgroundColor")
+                        LinearGradient(gradient: Gradient(colors: [Color.white.opacity(0.3), Color.clear]), startPoint: .top, endPoint: .bottom)
+                    })
+                    .cornerRadius(50)
+                    .padding(.all)
     }
-        }
+                        Link("Symptom Checker", destination: URL(string: "https://www.health.gov.au/resources/apps-and-tools/healthdirect-coronavirus-covid-19-symptom-checker")!)
+                            .frame(width: 400, height: 70)
+                            .foregroundColor(.black)
+                            .background(ZStack {
+                                Color("BackgroundColor")
+                                LinearGradient(gradient: Gradient(colors: [Color.white.opacity(0.3), Color.clear]), startPoint: .top, endPoint: .bottom)
+                            })
+                                .cornerRadius(50)
+                                .padding(.all)
+                                
+}
 
+}
+    }
+    
+}
 }
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
@@ -109,3 +88,4 @@ struct ContentView_Previews: PreviewProvider {
             .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
     }
 }
+
