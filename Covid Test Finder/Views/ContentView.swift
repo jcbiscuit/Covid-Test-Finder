@@ -14,17 +14,15 @@ struct SplashScreenView: View {
     @State var endSplash = false
     
     var body: some View {
-        ZStack {
-            Color("SplashScreenBackground")
             
-            Image("Logo")
+            Image("MagnifyingGlass")
                 .resizable()
                 .renderingMode(.original)
                 .aspectRatio(contentMode: .fit)
                 .frame(width: animate ? nil : 45, height: animate ? nil: 45)
                 .scaleEffect(animate ? 3 : 1)
                 .frame(width: UIScreen.main.bounds.width)
-        }
+       
         
         .ignoresSafeArea(.all, edges: .all)
         .onAppear(perform: animateSplash)
@@ -48,7 +46,7 @@ struct ContentView: View {
             VStack {
                 NavigationView {
                     VStack {
-                Image("Logo")
+                Image("NewLogo")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                    
@@ -56,9 +54,9 @@ struct ContentView: View {
                     destination: MainMapView()) {
                 Text("Find Nearby Test Centre")
                     .frame(width: 400, height: 70)
-                    .foregroundColor(.black)
+                    .foregroundColor(.white)
                     .background(ZStack {
-                        Color("BackgroundColor")
+                        Color("ButtonColor")
                         LinearGradient(gradient: Gradient(colors: [Color.white.opacity(0.3), Color.clear]), startPoint: .top, endPoint: .bottom)
                     })
                     .cornerRadius(50)
@@ -66,9 +64,9 @@ struct ContentView: View {
     }
                         Link("Symptom Checker", destination: URL(string: "https://www.health.gov.au/resources/apps-and-tools/healthdirect-coronavirus-covid-19-symptom-checker")!)
                             .frame(width: 400, height: 70)
-                            .foregroundColor(.black)
+                            .foregroundColor(.white)
                             .background(ZStack {
-                                Color("BackgroundColor")
+                                Color("ButtonColor")
                                 LinearGradient(gradient: Gradient(colors: [Color.white.opacity(0.3), Color.clear]), startPoint: .top, endPoint: .bottom)
                             })
                                 .cornerRadius(50)
