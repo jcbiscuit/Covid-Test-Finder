@@ -33,26 +33,32 @@ struct MainMapView: View {
     
     func calculateOffset() -> CGFloat {
         if self.landmarks.count > 0 && !self.tapped {
-            return UIScreen.main.bounds.size.height / 6
+            return UIScreen.main.bounds.size.height / 4
         }
         else if self.tapped {
-            return 650
+            return 550
         } else {
             return UIScreen.main.bounds.size.height
         }
     }
     
     var body: some View {
-        ZStack(alignment: .top) {
+        ZStack {
             
             MapView(landmarks: landmarks).ignoresSafeArea()
             
             TextField("Search for Test Centre", text: $search, onEditingChanged: { _ in })
             {
                 self.getNearbyLandmarks()
-            }.textFieldStyle(RoundedBorderTextFieldStyle())
-            .padding()
-            .offset(y: 44)
+            }.frame(width: 400, height: 45)
+            .foregroundColor(.black)
+            .background(Color(.white))
+                
+            
+            .cornerRadius(10)
+            .padding(.all)
+            .padding(.top, -400)
+            
             
             
             PlaceListView(landmarks: self.landmarks) {
@@ -66,8 +72,6 @@ struct MainMapView: View {
 struct MainMapView_Previews: PreviewProvider {
     static var previews: some View {
         MainMapView()
-        MainMapView()
-            .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
-    }
+            }
 }
 

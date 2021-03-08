@@ -20,7 +20,6 @@
 		3124145225F4457400C387BA /* LandmarkAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3124145125F4457400C387BA /* LandmarkAnnotation.swift */; };
 		3124145525F448B400C387BA /* PlaceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3124145425F448B400C387BA /* PlaceListView.swift */; };
 		3124145825F4544C00C387BA /* MainMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3124145725F4544C00C387BA /* MainMapView.swift */; };
-		3124145B25F454D200C387BA /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3124145A25F454D200C387BA /* TestView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +38,6 @@
 		3124145125F4457400C387BA /* LandmarkAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkAnnotation.swift; sourceTree = "<group>"; };
 		3124145425F448B400C387BA /* PlaceListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceListView.swift; sourceTree = "<group>"; };
 		3124145725F4544C00C387BA /* MainMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapView.swift; sourceTree = "<group>"; };
-		3124145A25F454D200C387BA /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +99,6 @@
 				3124144425F4385200C387BA /* MapView.swift */,
 				3124145425F448B400C387BA /* PlaceListView.swift */,
 				3124145725F4544C00C387BA /* MainMapView.swift */,
-				3124145A25F454D200C387BA /* TestView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -195,7 +192,6 @@
 			files = (
 				3124145225F4457400C387BA /* LandmarkAnnotation.swift in Sources */,
 				3124144E25F444E100C387BA /* Landmark.swift in Sources */,
-				3124145B25F454D200C387BA /* TestView.swift in Sources */,
 				3116339225EF0D70005455A4 /* AppDelegate.swift in Sources */,
 				3124145525F448B400C387BA /* PlaceListView.swift in Sources */,
 				3116339925EF0D70005455A4 /* Covid_Test_Finder.xcdatamodeld in Sources */,

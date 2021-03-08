@@ -33,10 +33,9 @@ extension LocationManager: CLLocationManagerDelegate {
     }
     
     func locationManager(_ _manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let location = locations.last else {
-            return
-        }
-        
+        guard let location = locations.last else { return }
+      
         self.location = location
     }
+   
 }
