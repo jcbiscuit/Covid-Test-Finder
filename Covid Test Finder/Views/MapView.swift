@@ -9,7 +9,8 @@ import Foundation
 import SwiftUI
 import MapKit
 
-class Coordinator: NSObject, MKMapViewDelegate {
+
+class Coordinator: NSObject, MKMapViewDelegate{
     
     var control: MapView
     
